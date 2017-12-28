@@ -17,7 +17,7 @@ use Prooph\Common\Event\ActionEventEmitter;
 use Prooph\ServiceBus\Exception\MessageDispatchException;
 use Prooph\ServiceBus\Exception\RuntimeException;
 use React\Promise\Deferred;
-use React\Promise\PromiseInterface;
+use React\Promise\ExtendedPromiseInterface;
 
 /**
  * The query bus dispatches a query message to a finder.
@@ -80,7 +80,7 @@ class QueryBus extends MessageBus
      *
      * @throws RuntimeException
      */
-    public function dispatch($query): PromiseInterface
+    public function dispatch($query): ExtendedPromiseInterface
     {
         $deferred = new Deferred();
 
